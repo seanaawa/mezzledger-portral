@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portal del Cliente - Mezzanine Ledger</title>
+  <meta name="description" content="Portal del Cliente para subir documentos y firmar." />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script defer src="/assets/site.config.js"></script>
+  <script defer src="/assets/app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="/">
+          <div class="logo" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M7 7h10M7 12h10M7 17h10" stroke="rgba(249,250,251,.9)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <h1>Mezzanine Ledger</h1>
+            <p class="i18n" data-es="Portal del Cliente" data-en="Client Portal"></p>
+          </div>
+        </a>
+
+        <nav class="navlinks" aria-label="Primary">
+          <a class="pill" href="/getting-started.html"><span class="i18n" data-es="Empezar" data-en="Get started"></span></a>
+          <a class="pill" href="/upload.html"><span class="i18n" data-es="Subir docs" data-en="Upload docs"></span></a>
+          <a class="pill" href="/faq.html"><span class="i18n" data-es="Preguntas" data-en="FAQ"></span></a>
+          <a class="pill" href="/support.html"><span class="i18n" data-es="Soporte" data-en="Support"></span></a>
+          <a class="pill primary" id="goPortalTop" href="#"><span class="i18n" data-es="Entrar a Assembly" data-en="Go to Assembly"></span></a>
+          <div class="lang">
+            <label class="small mono" for="langSelect">LANG</label>
+            <select id="langSelect" aria-label="Language">
+              <option value="es">ES</option>
+              <option value="en">EN</option>
+            </select>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="grid">
+          <div class="card hero-card">
+            <div class="h-eyebrow">
+              <span class="badge ok i18n" data-es="Seguro" data-en="Secure"></span>
+              <span class="badge i18n" data-es="Simple" data-en="Simple"></span>
+              <span class="badge warn i18n" data-es="Documentos" data-en="Documents"></span>
+            </div>
+
+            <h2 class="h-title i18n"
+              data-es="Sube documentos y firma - en un solo lugar."
+              data-en="Upload documents and sign - in one place."></h2>
+
+            <p class="h-sub i18n"
+              data-es="Este sitio te guía.  El portal real corre en Assembly.  Usa el botón para entrar."
+              data-en="This site guides you.  The actual portal runs on Assembly.  Use the button to enter."></p>
+
+            <div class="actions">
+              <a class="btn primary" id="goPortal" href="#"><span class="i18n" data-es="Entrar al portal" data-en="Enter portal"></span> →</a>
+              <a class="btn" href="/getting-started.html"><span class="i18n" data-es="Cómo funciona" data-en="How it works"></span></a>
+              <a class="btn" href="/upload.html"><span class="i18n" data-es="Qué subir" data-en="What to upload"></span></a>
+            </div>
+
+            <hr>
+
+            <div class="notice i18n"
+              data-es="<b>Importante:</b> si no tienes enlace de invitación, contáctanos para habilitar tu cuenta."
+              data-en="<b>Important:</b> if you don’t have an invite link, contact us to enable your account."></div>
+          </div>
+
+          <aside class="card">
+            <div class="kpis">
+              <div class="kpi">
+                <b class="i18n" data-es="1) Entra" data-en="1) Enter"></b>
+                <span class="i18n" data-es="Usa tu enlace o invitación." data-en="Use your link or invite."></span>
+              </div>
+              <div class="kpi">
+                <b class="i18n" data-es="2) Sube" data-en="2) Upload"></b>
+                <span class="i18n" data-es="PDF, fotos, y docs." data-en="PDFs, photos, docs."></span>
+              </div>
+              <div class="kpi">
+                <b class="i18n" data-es="3) Firma" data-en="3) Sign"></b>
+                <span class="i18n" data-es="Firmas electrónicas cuando aplique." data-en="E-sign when needed."></span>
+              </div>
+              <div class="kpi">
+                <b class="i18n" data-es="4) Listo" data-en="4) Done"></b>
+                <span class="i18n" data-es="Te confirmamos cuando esté completo." data-en="We confirm when complete."></span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="small">
+          <a href="https://mezzledger.com">mezzledger.com</a>
+        </div>
+        <div class="small">
+          <a href="/privacy.html"><span class="i18n" data-es="Privacidad" data-en="Privacy"></span></a>
+          &nbsp; • &nbsp;
+          <a href="/terms.html"><span class="i18n" data-es="Términos" data-en="Terms"></span></a>
+        </div>
+      </div>
+      <div class="small">© <span id="year"></span> Mezzanine Ledger.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    document.addEventListener("DOMContentLoaded", ()=>{
+      const cfg = window.ML_CONFIG || {};
+      const url = cfg.assemblyPortalUrl || "https://app.assembly.com/your-portal-link-here";
+      document.getElementById("goPortal").href = url;
+      document.getElementById("goPortalTop").href = url;
+    });
+  </script>
+</body>
+</html>

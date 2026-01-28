@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacidad - Portal Mezzanine Ledger</title>
+  <meta name="description" content="Política de privacidad.">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script defer src="/assets/site.config.js"></script>
+  <script defer src="/assets/app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="/">
+          <div class="logo" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M7 7h10M7 12h10M7 17h10" stroke="rgba(249,250,251,.9)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <h1>Mezzanine Ledger</h1>
+            <p class="i18n" data-es="Portal del Cliente" data-en="Client Portal"></p>
+          </div>
+        </a>
+
+        <nav class="navlinks" aria-label="Primary">
+          <a class="pill" href="/getting-started.html"><span class="i18n" data-es="Empezar" data-en="Get started"></span></a>
+          <a class="pill" href="/upload.html"><span class="i18n" data-es="Subir docs" data-en="Upload docs"></span></a>
+          <a class="pill" href="/faq.html"><span class="i18n" data-es="Preguntas" data-en="FAQ"></span></a>
+          <a class="pill" href="/support.html"><span class="i18n" data-es="Soporte" data-en="Support"></span></a>
+          <a class="pill primary" id="goPortal" href="#"><span class="i18n" data-es="Entrar a Assembly" data-en="Go to Assembly"></span></a>
+          <div class="lang">
+            <label class="small mono" for="langSelect">LANG</label>
+            <select id="langSelect" aria-label="Language">
+              <option value="es">ES</option>
+              <option value="en">EN</option>
+            </select>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="card article">
+        
+<h1 class="i18n" data-es="Política de privacidad" data-en="Privacy Policy"></h1>
+<p class="i18n"
+ data-es="Resumen: recopilamos la información mínima necesaria para prestar el servicio.  No vendemos tus datos.  Usamos proveedores para operar el portal y la comunicación."
+ data-en="Summary: we collect the minimum needed to provide service.  We do not sell your data.  We use vendors to operate the portal and communications."></p>
+
+<h2 class="i18n" data-es="Qué recopilamos" data-en="What we collect"></h2>
+<ul>
+  <li class="i18n" data-es="Información de contacto (nombre, email, teléfono)." data-en="Contact info (name, email, phone)."></li>
+  <li class="i18n" data-es="Documentos y datos que subes al portal." data-en="Documents and data you upload to the portal."></li>
+  <li class="i18n" data-es="Datos técnicos básicos (IP, navegador) para seguridad." data-en="Basic technical data (IP, browser) for security."></li>
+</ul>
+
+<h2 class="i18n" data-es="SMS y comunicación" data-en="SMS & communications"></h2>
+<p class="i18n"
+ data-es="Si nos das tu número, podemos enviarte mensajes sobre tu cuenta (recordatorios, estatus, solicitudes).  Puedes darte de baja respondiendo STOP."
+ data-en="If you provide your number, we may text you about your account (reminders, status, requests).  You can opt out by replying STOP."></p>
+
+<h2 class="i18n" data-es="Proveedores" data-en="Vendors"></h2>
+<p class="i18n"
+ data-es="El portal del cliente se opera con Assembly (u otro proveedor).  Sus políticas pueden aplicar en su plataforma."
+ data-en="The client portal is operated using Assembly (or another vendor).  Their policies may apply on their platform."></p>
+
+<h2 class="i18n" data-es="Seguridad" data-en="Security"></h2>
+<p class="i18n"
+ data-es="Usamos controles razonables para proteger información.  Ningún sistema es 100% seguro."
+ data-en="We use reasonable controls to protect information.  No system is 100% secure."></p>
+
+<p class="small i18n"
+ data-es="Última actualización: 2026-01-28.  Personaliza este documento a tus herramientas reales y requisitos legales."
+ data-en="Last updated: 2026-01-28.  Customize this policy to your actual tools and legal requirements."></p>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="small">
+          <a href="https://mezzledger.com">mezzledger.com</a>
+        </div>
+        <div class="small">
+          <a href="/privacy.html"><span class="i18n" data-es="Privacidad" data-en="Privacy"></span></a>
+          &nbsp; • &nbsp;
+          <a href="/terms.html"><span class="i18n" data-es="Términos" data-en="Terms"></span></a>
+        </div>
+      </div>
+      <div class="small">© <span id="year"></span> Mezzanine Ledger.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    document.addEventListener("DOMContentLoaded", ()=>{
+      const cfg = window.ML_CONFIG || {};
+      const url = cfg.assemblyPortalUrl || "https://app.assembly.com/your-portal-link-here";
+      const a = document.getElementById("goPortal");
+      if(a) a.href = url;
+    });
+  </script>
+</body>
+</html>

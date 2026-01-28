@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Soporte - Portal Mezzanine Ledger</title>
+  <meta name="description" content="Soporte del portal.">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script defer src="/assets/site.config.js"></script>
+  <script defer src="/assets/app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="/">
+          <div class="logo" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M7 7h10M7 12h10M7 17h10" stroke="rgba(249,250,251,.9)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <h1>Mezzanine Ledger</h1>
+            <p class="i18n" data-es="Portal del Cliente" data-en="Client Portal"></p>
+          </div>
+        </a>
+
+        <nav class="navlinks" aria-label="Primary">
+          <a class="pill" href="/getting-started.html"><span class="i18n" data-es="Empezar" data-en="Get started"></span></a>
+          <a class="pill" href="/upload.html"><span class="i18n" data-es="Subir docs" data-en="Upload docs"></span></a>
+          <a class="pill" href="/faq.html"><span class="i18n" data-es="Preguntas" data-en="FAQ"></span></a>
+          <a class="pill" href="/support.html"><span class="i18n" data-es="Soporte" data-en="Support"></span></a>
+          <a class="pill primary" id="goPortal" href="#"><span class="i18n" data-es="Entrar a Assembly" data-en="Go to Assembly"></span></a>
+          <div class="lang">
+            <label class="small mono" for="langSelect">LANG</label>
+            <select id="langSelect" aria-label="Language">
+              <option value="es">ES</option>
+              <option value="en">EN</option>
+            </select>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="card article">
+        
+<h1 class="i18n" data-es="Soporte" data-en="Support"></h1>
+<p class="i18n"
+ data-es="Si tienes problemas de acceso, primero revisa tu enlace de invitación.  Si aún así no funciona, contáctanos."
+ data-en="If you have access issues, first check your invite link.  If it still doesn't work, contact us."></p>
+
+<div class="grid2">
+  <div class="kpi">
+    <b class="i18n" data-es="Email" data-en="Email"></b>
+    <span><a id="mlEmail" href="#"></a></span>
+  </div>
+  <div class="kpi">
+    <b class="i18n" data-es="Teléfono" data-en="Phone"></b>
+    <span><a id="mlPhone" href="#"></a></span>
+  </div>
+</div>
+
+<h2 class="i18n" data-es="Para ayudarnos rápido" data-en="To help us help you fast"></h2>
+<ul>
+  <li class="i18n" data-es="Dinos tu nombre y el email del portal." data-en="Tell us your name and portal email."></li>
+  <li class="i18n" data-es="Adjunta una captura del error (si aplica)." data-en="Attach a screenshot of the error (if applicable)."></li>
+  <li class="i18n" data-es="Indica si es móvil o computadora." data-en="Tell us whether you're on mobile or desktop."></li>
+</ul>
+
+<script>
+document.addEventListener("DOMContentLoaded", ()=>{
+  const cfg = window.ML_CONFIG || {};
+  const email = cfg.contactEmail || "hello@mezzledger.com";
+  const phone = cfg.contactPhone || "";
+  const e = document.getElementById("mlEmail");
+  e.textContent = email; e.href = "mailto:" + email;
+  const p = document.getElementById("mlPhone");
+  p.textContent = phone; p.href = phone ? ("tel:" + phone.replace(/[^0-9+]/g,'')) : "#";
+});
+</script>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="small">
+          <a href="https://mezzledger.com">mezzledger.com</a>
+        </div>
+        <div class="small">
+          <a href="/privacy.html"><span class="i18n" data-es="Privacidad" data-en="Privacy"></span></a>
+          &nbsp; • &nbsp;
+          <a href="/terms.html"><span class="i18n" data-es="Términos" data-en="Terms"></span></a>
+        </div>
+      </div>
+      <div class="small">© <span id="year"></span> Mezzanine Ledger.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    document.addEventListener("DOMContentLoaded", ()=>{
+      const cfg = window.ML_CONFIG || {};
+      const url = cfg.assemblyPortalUrl || "https://app.assembly.com/your-portal-link-here";
+      const a = document.getElementById("goPortal");
+      if(a) a.href = url;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Términos - Portal Mezzanine Ledger</title>
+  <meta name="description" content="Términos de uso.">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script defer src="/assets/site.config.js"></script>
+  <script defer src="/assets/app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="/">
+          <div class="logo" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M7 7h10M7 12h10M7 17h10" stroke="rgba(249,250,251,.9)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <h1>Mezzanine Ledger</h1>
+            <p class="i18n" data-es="Portal del Cliente" data-en="Client Portal"></p>
+          </div>
+        </a>
+
+        <nav class="navlinks" aria-label="Primary">
+          <a class="pill" href="/getting-started.html"><span class="i18n" data-es="Empezar" data-en="Get started"></span></a>
+          <a class="pill" href="/upload.html"><span class="i18n" data-es="Subir docs" data-en="Upload docs"></span></a>
+          <a class="pill" href="/faq.html"><span class="i18n" data-es="Preguntas" data-en="FAQ"></span></a>
+          <a class="pill" href="/support.html"><span class="i18n" data-es="Soporte" data-en="Support"></span></a>
+          <a class="pill primary" id="goPortal" href="#"><span class="i18n" data-es="Entrar a Assembly" data-en="Go to Assembly"></span></a>
+          <div class="lang">
+            <label class="small mono" for="langSelect">LANG</label>
+            <select id="langSelect" aria-label="Language">
+              <option value="es">ES</option>
+              <option value="en">EN</option>
+            </select>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="card article">
+        
+<h1 class="i18n" data-es="Términos de uso" data-en="Terms of Use"></h1>
+<p class="i18n"
+ data-es="Al usar este sitio, aceptas estos términos.  Este contenido es informativo y no constituye asesoría legal o fiscal."
+ data-en="By using this site, you agree to these terms.  Content is informational and does not constitute legal or tax advice."></p>
+
+<h2 class="i18n" data-es="Alcance" data-en="Scope"></h2>
+<ul>
+  <li class="i18n" data-es="El trabajo se define por escrito (carta de compromiso o contrato)." data-en="Work is defined in writing (engagement letter or contract)."></li>
+  <li class="i18n" data-es="Los plazos dependen de la entrega completa de documentos." data-en="Timelines depend on complete document delivery."></li>
+  <li class="i18n" data-es="No garantizamos resultados específicos." data-en="We do not guarantee specific outcomes."></li>
+</ul>
+
+<h2 class="i18n" data-es="Limitación de responsabilidad" data-en="Limitation of liability"></h2>
+<p class="i18n"
+ data-es="En la medida permitida por ley, no somos responsables por daños indirectos o consecuentes."
+ data-en="To the extent permitted by law, we are not liable for indirect or consequential damages."></p>
+
+<p class="small i18n"
+ data-es="Última actualización: 2026-01-28.  Personaliza para tu práctica."
+ data-en="Last updated: 2026-01-28.  Customize for your practice."></p>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="small">
+          <a href="https://mezzledger.com">mezzledger.com</a>
+        </div>
+        <div class="small">
+          <a href="/privacy.html"><span class="i18n" data-es="Privacidad" data-en="Privacy"></span></a>
+          &nbsp; • &nbsp;
+          <a href="/terms.html"><span class="i18n" data-es="Términos" data-en="Terms"></span></a>
+        </div>
+      </div>
+      <div class="small">© <span id="year"></span> Mezzanine Ledger.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    document.addEventListener("DOMContentLoaded", ()=>{
+      const cfg = window.ML_CONFIG || {};
+      const url = cfg.assemblyPortalUrl || "https://app.assembly.com/your-portal-link-here";
+      const a = document.getElementById("goPortal");
+      if(a) a.href = url;
+    });
+  </script>
+</body>
+</html>
